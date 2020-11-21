@@ -19,7 +19,7 @@ import luke.app.imagesapp.viewmodel.GiphyViewModel
 
 
 private lateinit var giphyViewModel: GiphyViewModel
-private lateinit var viewModel: ListViewModel
+
 private var recyclerView: RecyclerView? = null
 private var adapter: ImagesRecyclerAdapter? = null
 private var items = ArrayList<Data>()
@@ -54,11 +54,10 @@ class ImageListFragment : Fragment() {
                 recyclerView = view.findViewById(R.id.recycler_view)
                 recyclerView!!.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                items = it.data
-                adapter = ImagesRecyclerAdapter(activity as MainActivity, items)
-                recyclerView!!.adapter = adapter
+                recyclerView!!.adapter = ImagesRecyclerAdapter(activity as MainActivity, it.data)
+                recyclerView!!.adapter!!.notifyDataSetChanged()
             } else {
-                adapter!!.notifyDataSetChanged()
+                recyclerView!!.adapter = ImagesRecyclerAdapter(activity as MainActivity, it.data)
             }
         })
 
@@ -77,17 +76,10 @@ class ImageListFragment : Fragment() {
                 items = it.data
                 adapter!!.notifyDataSetChanged()
             }
-
-
         })
 
         giphyViewModel.getTrendingImages()
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }

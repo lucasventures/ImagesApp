@@ -36,7 +36,7 @@ class DetailFragment : Fragment() {
         val rating = arguments?.getString("RATING")
         val source = arguments?.getString("SOURCE")
 
-        Glide.with(this)
+        Glide.with(imageView.context)
             .load(url)
             .centerCrop()
             .into(imageView)

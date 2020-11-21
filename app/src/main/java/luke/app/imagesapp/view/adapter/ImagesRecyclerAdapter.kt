@@ -31,7 +31,7 @@ class ImagesRecyclerAdapter(
         val imageView = holder.imageView
 
         if (giphy.images.original.url.isNotEmpty()) {
-            Glide.with(activity)
+            Glide.with(imageView.context)
                 .load(giphy.images.original.url)
                 .centerCrop()
                 .into(imageView)
