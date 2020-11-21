@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import luke.app.imagesapp.R
+import luke.app.imagesapp.view.image.GlideApp
+import luke.app.imagesapp.view.image.MyGlideApp
 
 class DetailFragment : Fragment() {
 
@@ -36,7 +36,7 @@ class DetailFragment : Fragment() {
         val rating = arguments?.getString("RATING")
         val source = arguments?.getString("SOURCE")
 
-        Glide.with(imageView.context)
+        GlideApp.with(imageView.context)
             .load(url)
             .centerCrop()
             .into(imageView)

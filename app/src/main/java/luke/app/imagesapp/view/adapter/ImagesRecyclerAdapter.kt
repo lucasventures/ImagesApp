@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import luke.app.imagesapp.R
 import luke.app.imagesapp.model.giphy.model.Data
 import luke.app.imagesapp.view.activities.MainActivity
 import luke.app.imagesapp.view.fragments.DetailFragment
+import luke.app.imagesapp.view.image.GlideApp
+import luke.app.imagesapp.view.image.MyGlideApp
 import luke.app.imagesapp.view.viewholders.ImageViewHolder
 
 
@@ -31,7 +32,7 @@ class ImagesRecyclerAdapter(
         val imageView = holder.imageView
 
         if (giphy.images.original.url.isNotEmpty()) {
-            Glide.with(imageView.context)
+            GlideApp.with(imageView.context)
                 .load(giphy.images.original.url)
                 .centerCrop()
                 .into(imageView)
