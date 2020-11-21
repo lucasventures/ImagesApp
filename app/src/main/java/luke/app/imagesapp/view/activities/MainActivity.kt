@@ -1,4 +1,4 @@
-package luke.app.imagesapp.view
+package luke.app.imagesapp.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,4 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         giphyViewModel.getTrendingImages()
     }
+
+
+
+
+
 }
