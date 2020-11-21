@@ -1,6 +1,5 @@
 package luke.app.imagesapp.model.giphy.trending.callinfo
 
-import luke.app.imagesapp.model.giphy.model.Images
+import luke.app.imagesapp.model.giphy.model.Data
 
-class GiphyTrendingImageDataResponseInfo : ArrayList<Images>() {
-}
+data class GiphyTrendingImageDataResponseInfo(val data : ArrayList<Data>)

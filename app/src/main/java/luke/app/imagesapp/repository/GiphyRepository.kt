@@ -22,7 +22,7 @@ class GiphyRepository : BaseRepository() {
                     call: Call<GiphyTrendingImageDataResponseInfo>,
                     t: Throwable
                 ) {
-                    Log.e(ContentValues.TAG, "onFailure: Call for gists failed. ${t.message}")
+                    Log.e(ContentValues.TAG, "onFailure: Call for giphy failed. ${t.message}")
                 }
 
                 override fun onResponse(
@@ -41,7 +41,7 @@ class GiphyRepository : BaseRepository() {
     ) {
         apiCaller.getQueryImages(query).enqueue(object : Callback<GiphyQueryImageDataResponseInfo> {
             override fun onFailure(call: Call<GiphyQueryImageDataResponseInfo>, t: Throwable) {
-                Log.e(ContentValues.TAG, "onFailure: Call for gists failed. ${t.message}")
+                Log.e(ContentValues.TAG, "onFailure: Call for giphy failed. ${t.message}")
             }
 
             override fun onResponse(
