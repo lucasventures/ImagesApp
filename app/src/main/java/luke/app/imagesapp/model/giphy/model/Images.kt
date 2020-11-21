@@ -1,5 +1,7 @@
 package luke.app.imagesapp.model.giphy.model
 
+import java.io.Serializable
+
 data class Images(
     val `480w_still`: WStill,
     val downsized: Downsized,
@@ -25,4 +27,4 @@ data class Images(
     val preview: Preview,
     val preview_gif: PreviewGif,
     val preview_webp: PreviewWebp
-)
+) : Serializable
